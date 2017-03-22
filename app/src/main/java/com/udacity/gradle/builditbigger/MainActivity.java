@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //getSupportFragmentManager().beginTransaction().add(R.id.fragment,new MainActivityFragment()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment,new MainActivityFragment()).commit();
         mProgressBar = (ProgressBar) findViewById(R.id.progressbar);
     }
 
@@ -58,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
         //Intent intent = new Intent(this, JokeDisplayActivity.class);
         //intent.putExtra(getString(R.string.joke_story), jokeStory.getJokeStory());
         //startActivity(intent);
-        new EndpointsAsyncTask(mProgressBar).execute(new Pair<Context,String>(this,"Manfred"));
-
+        new EndpointsAsyncTask(mProgressBar).execute(new Pair<Context,String>(this,"Joker"));
     }
 
 

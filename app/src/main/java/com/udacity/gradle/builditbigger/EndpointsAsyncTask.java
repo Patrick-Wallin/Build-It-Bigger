@@ -2,6 +2,7 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.util.Pair;
 
 import android.os.AsyncTask;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.androidlibrary.JokeDisplayActivity;
 import com.example.piwal.myapplication.backend.myApi.MyApi;
+import com.example.piwal.myapplication.backend.myApi.model.MyBean;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -31,7 +33,6 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context,String>,Void,Stri
         mProgressBar = progressBar;
     }
 
-
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
         if(myApiService == null) {
@@ -44,7 +45,6 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context,String>,Void,Stri
                             request.setDisableGZipContent(true);
                         }
                     });
-
             myApiService = builder.build();
         }
 

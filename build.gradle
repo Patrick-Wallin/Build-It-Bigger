@@ -17,3 +17,32 @@ allprojects {
         jcenter()
     }
 }
+
+task runGCM {
+    dependsOn ":GCMJokes:appengineRun"
+    println "Start running backend - GCM"
+}
+
+task shutDownServer {
+    dependsOn ":GCMJokes:appengineStop"
+    doLast {
+        println "Stop running backend - GCM"
+    }
+}
+
+task doTests {
+    dependsOn ":app:connectedCheck"
+    doLast {
+        println "Run Android Test"
+    }
+}
+
+task doAllThreeTasks {
+    dependsOn = ["runGCM", "doTests", "shutDownServer"]
+    tasks.findByName("doTests").mustRunAfter "runGCM"
+    tasks.findByName("shutDownServer").mustRunAfter "doTests"
+    doLast {
+        println "Completed testing!"
+    }
+}
+
