@@ -40,7 +40,7 @@ public class MainActivityFragment extends Fragment {
             public void onAdClosed() {
                 requestNewInterstitial();
                 ProgressBar mProgressBar = (ProgressBar) root.findViewById(R.id.progressbar);
-                new EndpointsAsyncTask(mProgressBar).execute(new Pair<Context,String>(mContext,"Joker"));
+                new EndpointsAsyncTask(mProgressBar).execute(new Pair<Context,String>(mContext,getString(R.string.endpoints_name)));
             }
         });
 

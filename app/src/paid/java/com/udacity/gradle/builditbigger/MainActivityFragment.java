@@ -10,9 +10,7 @@ import android.view.ViewGroup;
 
 
 public class MainActivityFragment extends Fragment {
-    public MainActivityFragment() {
-        // Required empty public constructor
-    }
+    public MainActivityFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

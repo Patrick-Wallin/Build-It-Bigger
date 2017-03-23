@@ -18,9 +18,21 @@ allprojects {
     }
 }
 
+/*
 task runGCM {
     dependsOn ":GCMJokes:appengineRun"
     println "Start running backend - GCM"
+}
+*/
+task runGCM {
+    dependsOn ":GCMJokes:appengineRun"
+    println "Start running backend - GCM"
+    evaluationDependsOn ':GCMJokes'
+    project(':GCMJokes') {
+        appengine {
+            daemon true
+        }
+    }
 }
 
 task shutDownServer {

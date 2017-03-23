@@ -36,6 +36,5 @@ public class EndpointsAsyncTaskAndroidTest  {
 
         Assert.assertTrue("Result is null", result != null);
         Assert.assertTrue("Result is empty", !result.isEmpty());
-        //Assert.assertTrue(result != null && && result.trim().length() > 0 && !result.isEmpty());
     }
 }
