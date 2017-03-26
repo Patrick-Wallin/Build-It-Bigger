@@ -16,9 +16,13 @@ android {
     productFlavors {
         free {
             applicationId "com.udacity.gradle.builditbigger.free"
+            dependencies {
+                compile 'com.google.android.gms:play-services-ads:10.2.0'
+            }
         }
         paid {
             applicationId "com.udacity.gradle.builditbigger.paid"
+
         }
     }
 
@@ -37,7 +41,6 @@ dependencies {
     compile project(path: ':GCMJokes', configuration: 'android-endpoints')
 
     compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.google.android.gms:play-services-ads:10.2.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile 'com.android.support:support-v4:25.3.0'
     androidTestCompile 'com.android.support:support-annotations:25.3.0'
